@@ -1,0 +1,56 @@
+<div class="card flex-fill">
+    <div class="card-header border-0 pb-0">
+        <div class="d-flex align-items-center justify-content-between flex-wrap row-gap-3">
+            <h4>
+                <i class="ti ti-grip-vertical me-1"></i>
+                Tous les Entrées
+            </h4>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive custom-table ">
+            <table class="table dataTable" id="deals-project">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Date</th> 
+                        <th>Nom</th>
+                        <th>Quantité</th>
+                        <th>Prix d'achat</th>
+                        <th>Prix vente</th>
+                        <th>Date d'expiration</th>
+                        <th>Fourniseur</th>
+                        <th>Description</th>
+                        <th>Signature</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (isLoading) {
+                    <div class=" text-center d-flex justify-content-center align-items-center ">
+                        <div class="spinner-border bs-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                    } @else {
+                        @for (item of datalist; track item.ID; let i = $index) {
+                        <tr class="odd">
+                            <td>{{ item.CreatedAt | date: 'dd/mm/yyyy HH:mm' }} </td> 
+                            <td>{{item.Product!.name }}</td> 
+                            <td>{{item.quantity }} {{item.Product!.unite_vente }}s</td> 
+                            <td>{{item.prix_achat }}</td> 
+                            <td>{{item.Product!.prix_vente }}</td>
+                            <td>{{item.date_expiration | date: 'dd/mm/yyyy' }}</td>
+                            <td>{{item.Fournisseur!.name }}</td>
+                            <td>{{item.description }}</td>
+                            <td>{{item.signature }}</td>
+                        </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+            <mat-paginator [length]="length" [pageSize]="pageSize"
+            [pageSizeOptions]="[15, 20, 30, 40, 50, 80, 100]" showFirstLastButtons
+            (page)="onPageChange($event)" aria-label="Select page">
+        </mat-paginator>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<!-- 
+<li class="task-wrap" [ngClass]="{
+    'danger': pourcentQty < 30,
+    'warning': pourcentQty >= 30 && pourcentQty < 70,
+    'success': pourcentQty >= 70
+  }">
+    <div>
+      <h6>
+        <a [routerLink]="['/web/products', item.ID!, 'stocks' ]">
+          #{{ item.reference }}
+        </a>
+      </h6>
+      <a [routerLink]="['/web/products', item.ID!, 'stocks' ]">
+        {{ item.name }}
+      </a>
+    </div>
+    <div class="task-actions">
+      <ul>
+        <li>
+          {{ formatCurrency(item.prix_vente, currentUser.currency) }} <br>
+          @if (item.tva === 16) {
+          {{ item.tva }}%
+          }@else { - }
+        </li>
+        <li class="task-owner">
+          <div class="dropdown table-action">
+            <a href="javascript:void(0);" class="action-icon" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="fa fa-ellipsis-v"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              @if(currentUser.permission === 'ALL' ||
+              currentUser.permission === 'AM' ||
+              currentUser.permission === 'MS' ||
+              currentUser.permission === 'M') {
+              <a class="dropdown-item" data-bs-toggle="offcanvas" href="javascript:void(0);"
+                data-bs-target="#offcanvas_edit_mobile" (click)="findValue(item.ID!)">
+                <i class="ti ti-edit text-blue"></i>
+                Edit
+              </a>
+              }
+              @if(currentUser.permission === 'ALL' ||
+              currentUser.permission === 'MS') {
+              <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal"
+                data-bs-target="#delete_contact_mobile" (click)="findValue(item.ID!)">
+                <i class="ti ti-trash text-danger"></i>
+                Delete
+              </a>
+              }
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </li> -->
