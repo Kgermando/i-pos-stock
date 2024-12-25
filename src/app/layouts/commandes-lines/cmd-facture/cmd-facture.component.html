@@ -16,7 +16,9 @@
           <th>P.U.</th>
           <th>TVA</th>
           <th>Total</th>
-          <th> <i class="ti ti-trash"></i> </th>
+          @if (commande.status !== 'Cash') {
+            <th> <i class="ti ti-trash"></i> </th>
+          } 
         </tr>
       </thead>
       <tbody>
@@ -43,13 +45,15 @@
           <td>
             {{ formatCurrency(item.quantity * item.Product!.prix_vente, currentUser.currency) }}
           </td>
-          <td>
-            <button type="button" (click)="restitutionBtn(item.ID! ,item.Product!, item.quantity)"
-                class="btn-close custom-btn-close border p-1 me-0 d-flex align-items-center justify-content-center rounded-circle"
-                data-bs-dismiss="offcanvas" aria-label="Close">
-                <i class="ti ti-x"></i>
-            </button>
-          </td>
+          @if (commande.status !== 'Cash') {
+            <td>
+              <button type="button" (click)="restitutionBtn(item.ID! ,item.Product!, item.quantity)"
+                  class="btn-close custom-btn-close border p-1 me-0 d-flex align-items-center justify-content-center rounded-circle"
+                  data-bs-dismiss="offcanvas" aria-label="Close">
+                  <i class="ti ti-x"></i>
+              </button>
+            </td>
+          } 
         </tr>
         } @empty {
         <tr>
