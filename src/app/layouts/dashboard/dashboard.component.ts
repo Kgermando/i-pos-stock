@@ -319,6 +319,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     ).subscribe((res) => {
       this.courbeVente24hList = res.data;
       this.getCourbeVente24hLineChart();
+      console.log("courbeVente24hList",this.courbeVente24hList )
       this.isLoading = false;
     });
   }
