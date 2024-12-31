@@ -23,7 +23,7 @@ export class DataService {
       separateRoute: false,
       menu: [ 
         {
-          menuValue: 'Commandes',
+          menuValue: 'Ventes',
           icon: 'list-check',
           base: 'commandes',
           route: routes.commandeList,
@@ -175,7 +175,7 @@ export class DataService {
       separateRoute: false,
       menu: [ 
         {
-          menuValue: 'Commandes',
+          menuValue: 'Ventes',
           icon: 'list-check',
           base: 'commandes',
           route: routes.commandeList,

@@ -183,7 +183,7 @@
                         } @else {
                         @for (item of dataListEntree; track item.ID; let i = $index) {
                         <tr class="odd">
-                          <td>{{ item.CreatedAt | date: 'dd/mm/yyyy HH:mm' }} </td>
+                          <td>{{ item.CreatedAt | date: 'dd/MM/yyyy HH:mm' }} </td>
                           <td>{{item.Product!.name }}</td>
                           <td>{{ item.quantity }}
                             @if (item.quantity > 1) {
@@ -193,7 +193,7 @@
                             }
                           </td>
                           <td>{{item.prix_achat }} {{ currentUser.currency }}</td>
-                          <td>{{item.date_expiration | date: 'dd/mm/yyyy' }}</td>
+                          <td>{{item.date_expiration | date: 'dd/MM/yyyy' }}</td>
                           <td>
                             @if (item.Fournisseur) {
                             {{item.Fournisseur!.name }}

@@ -8,7 +8,7 @@
           <div class="row align-items-center">
             <div class="col-md-8">
               <h4 class="page-title">
-                Commande <span class="count-title">{{ length }}</span>
+                Ventes <span class="count-title">{{ length }}</span>
               </h4>
             </div>
             <div class="col-md-4 text-end">
@@ -45,7 +45,7 @@
                   currentUser.permission === 'A') {
                   <button (click)="onSubmit()" class="btn btn-primary" data-bs-toggle="offcanvas">
                     <i class="ti ti-square-rounded-plus me-2"></i>
-                    Ajouter commande
+                    Ajouter vente
                   </button>
                   }
                 </div>
@@ -82,11 +82,11 @@
                       </h6>
                       @if (item.status === 'Cash') {
                       <a [routerLink]="['/web/commandes', item.ID, 'facture', item.ncommande ]">
-                        {{item.CreatedAt | date: 'dd/mm/yyy HH:mm' }}
+                        {{item.CreatedAt | date: 'dd/MM/YYYY HH:mm' }}
                       </a>
                       } @else {
                       <a [routerLink]="['/web/commandes', item.ID, 'line' ]">
-                        {{item.CreatedAt | date: 'dd/mm/yyy HH:mm' }}
+                        {{item.CreatedAt | date: 'dd/MM/YYYY HH:mm' }}
                       </a>
                       }
                     </div>

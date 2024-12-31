@@ -8,7 +8,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-8">
                             <h4 class="page-title">
-                                Commandes <span class="count-title">{{ length }}</span>
+                                Ventes <span class="count-title">{{ length }}</span>
                             </h4>
                         </div>
                         <div class="col-md-4 text-end">
@@ -35,7 +35,7 @@
                                                 <span class="form-icon"><i class="ti ti-search"></i></span>
                                                 <input type="text" #input [(ngModel)]="search"
                                                     (ngModelChange)="onSearchChange($event)" class="form-control"
-                                                    placeholder="Ex. N˚ commande " />
+                                                    placeholder="Ex. N˚ vente " />
                                             </div>
                                         </div>
                                         <div class="col-sm-8">
@@ -46,7 +46,7 @@
                                                 <button (click)="onSubmit()" class="btn btn-primary" data-bs-toggle="offcanvas"
                                                     data-bs-target="#offcanvas_add">
                                                     <i class="ti ti-square-rounded-plus me-2"></i>
-                                                    Ajouter commande
+                                                    Ajouter une vente
                                                 </button>
                                                 }
                                             </div>
@@ -62,7 +62,7 @@
             
                                             <!-- ncommande Column -->
                                             <ng-container matColumnDef="ncommande">
-                                                <th mat-header-cell *matHeaderCellDef> N˚ Commande </th>
+                                                <th mat-header-cell *matHeaderCellDef> N˚ vente </th>
                                                 <td mat-cell *matCellDef="let element">
                                                     @if (element.status === 'Cash') {
                                                     <a
@@ -84,11 +84,11 @@
                                                     @if (element.status === 'Cash') {
                                                     <a
                                                         [routerLink]="['/web/commandes', element.ID, 'facture', element.ncommande ]">
-                                                        {{element.CreatedAt | date: 'dd/mm/yyy HH:mm' }}
+                                                        {{element.CreatedAt | date: 'dd/MM/YYYY HH:mm' }}
                                                     </a>
                                                     } @else {
                                                     <a [routerLink]="['/web/commandes', element.ID, 'line' ]">
-                                                        {{element.CreatedAt | date: 'dd/mm/yyy HH:mm' }}
+                                                        {{element.CreatedAt | date: 'dd/MM/YYYY HH:mm' }}
                                                     </a>
                                                     }
                                                 </td>
